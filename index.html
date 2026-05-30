@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eid Cute Experience</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <div class="hero">
+    <div class="animated-bow">🎀</div>
+    <h1>Hi Cute</h1>
+    <p>Eid Mubarak! 🌙✨</p>
+  </div>
+
+  <!-- SECTION 2: SALAMI QUESTION -->
+  <div class="section" id="section2">
+    <div class="section-card">
+      <h2>Salami Lagbe? 🎁</h2>
+      <div class="button-group">
+        <button class="btn btn-primary" onclick="handleSalamiYes()">Haa! 😊</button>
+        <button class="btn btn-secondary" onclick="handleSalamiNo()">Na... 😐</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2B: SALAMI CELEBRATION -->
+  <div class="section section-hidden" id="section2b">
+    <div class="section-card">
+      <div id="salamiContent" class="result-content">
+        <!-- Injected via JS -->
+      </div>
+      <div class="button-group">
+        <button class="btn btn-primary" onclick="moveToFoodQuiz()">Chalao, Next! ▶️</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2C: SALAMI NO RESPONSE -->
+  <div class="section section-hidden" id="section2c">
+    <div class="section-card">
+      <div style="text-align: center;">
+        <div style="font-size: 5rem; margin-bottom: 20px; animation: shake 0.5s ease-in-out;">😐</div>
+        <p style="font-size: 1.2rem; color: #9b59b6; font-weight: 600;">Okay then... 💔</p>
+        <p style="font-size: 1rem; color: #666; margin-top: 20px;">Tomar keso na, tomar loss! 😂</p>
+      </div>
+      <div class="button-group">
+        <button class="btn btn-primary" onclick="moveToFoodQuiz()">Chalao, Next Ques! ▶️</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: FOOD CONSUMPTION QUIZ -->
+  <div class="section section-hidden" id="section3">
+    <div class="section-card">
+      <h2>Food Challenge! 🍗</h2>
+      <p>Eid e koto kg gosto kheyecho? (1-5 kg)</p>
+      
+      <div class="radio-group">
+        <label class="radio-option">
+          <input type="radio" name="foodAmount" value="1">
+          <span class="radio-label">😌 1 kg - Just Taste</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="foodAmount" value="2">
+          <span class="radio-label">🔥 2 kg - Eid Shuru!</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="foodAmount" value="3">
+          <span class="radio-label">😲 3 kg - Stomach Resign</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="foodAmount" value="4">
+          <span class="radio-label">😨 4 kg - World Spins</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="foodAmount" value="5">
+          <span class="radio-label">💀 5 kg - Moving Cow Now</span>
+        </label>
+      </div>
+      
+      <div class="error-msg" id="foodError">Bhai, ekta select to korte hobe! 😂</div>
+      
+      <div class="button-group">
+        <button class="btn btn-primary" onclick="showResults()">Show Me Results 🎉</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: RESULTS -->
+  <div class="section section-hidden" id="section4">
+    <div class="section-card">
+      <div class="result-content" id="resultContent">
+        <!-- Injected via JS -->
+      </div>
+      <div class="button-group">
+        <button class="btn btn-primary" onclick="resetExperience()">Again? 🔄</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
+</body>
+</html>
