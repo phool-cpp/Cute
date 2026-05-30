@@ -24,7 +24,8 @@ function handleSalamiYes() {
       <img src="IMG20260530075451.jpg" 
            onerror="this.onerror=null; this.src='https://placehold.co/150x150/9b59b6/ffffff?text=Salami+Pic&font=poppins';" 
            class="salami-image" 
-           alt="Salami Bonus">
+           alt="Salami Bonus"
+           onclick="openImageModal(this.src, this.alt)">
       <p style="font-size: 1.1rem; color: #666; margin-top: 20px;">
         Happy Eid, Enjoy! 💕
       </p>
@@ -104,6 +105,30 @@ function createConfetti() {
     setTimeout(() => confetti.remove(), 3500);
   }
 }
+
+function openImageModal(src, alt) {
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('imageModalImg');
+  modalImg.src = src;
+  modalImg.alt = alt || '';
+  modal.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeImageModal(event) {
+  const modal = document.getElementById('imageModal');
+  if (!modal.classList.contains('show')) return;
+  if (!event || event.target.id === 'imageModal' || event.target.classList.contains('image-modal-close')) {
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+}
+
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    closeImageModal();
+  }
+});
 
 function resetExperience() {
   const radios = document.querySelectorAll('input[name="foodAmount"]');

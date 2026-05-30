@@ -102,6 +102,14 @@
     </div>
   </div>
 
+  <!-- IMAGE MODAL -->
+  <div id="imageModal" class="image-modal" onclick="closeImageModal(event)">
+    <div class="image-modal-content" onclick="event.stopPropagation();">
+      <button class="image-modal-close" onclick="closeImageModal(event)">&times;</button>
+      <img id="imageModalImg" src="" alt="">
+    </div>
+  </div>
+
   <!-- JAVASCRIPT -->
   <script src="script.js"></script>
 </body>

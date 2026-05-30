@@ -269,12 +269,13 @@ h1, h2, .salami-message {
 }
 
 .salami-image {
-  width: 512px;
-  height: 512px;
+  width: 200px;
+  height: 200px;
   margin: 20px auto;
   object-fit: cover;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(155, 89, 182, 0.3);
+  cursor: pointer;
 }
 
 .result-emoji {
@@ -288,6 +289,57 @@ h1, h2, .salami-message {
   font-weight: 600;
   margin-bottom: 20px;
   line-height: 1.8;
+}
+
+.image-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  padding: 20px;
+}
+
+.image-modal.show {
+  display: flex;
+}
+
+.image-modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.image-modal-content img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 24px;
+}
+
+.image-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #333;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.image-modal-close:hover {
+  transform: scale(1.05);
 }
 
 @keyframes bounce {
